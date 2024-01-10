@@ -1,0 +1,52 @@
+" Enable line numbers
+set number
+
+" Set the tab width to 4 spaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Enable syntax highlighting
+syntax enable
+
+" Set a more modern way of navigating and interacting with Vim
+set nocompatible
+
+" Increase the history to remember more commands and searches
+set history=1000
+
+" Highlight the current line
+set cursorline
+
+" Show matching brackets/parentheses
+set showmatch
+
+" Auto indent based on the previous line
+set autoindent
+
+" Set a nice status line at the bottom
+set laststatus=2
+
+" Use system clipboard
+set clipboard=unnamedplus
+
+" Enable line wrapping
+set wrap
+
+" Search as characters are entered, and highlight matches
+set incsearch
+set hlsearch
+
+" Disable sound bell on errors
+set noerrorbells
+set visualbell
+set t_vb=
+
+" Display line and column number in the status line
+set ruler
+
+
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
+nnoremap <C-s> :w<CR>
+
