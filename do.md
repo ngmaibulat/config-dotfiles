@@ -1,6 +1,3 @@
-- qtile configs merge
-- i3 configs
-
 - vim plugins
 - nvim
 - tmux configs
