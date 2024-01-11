@@ -14,3 +14,5 @@ cp X11/Xresources-dpi-220 ~/.Xresources
 
 source ~/.bashrc
 
+echo source .bashrc > .profile
+
