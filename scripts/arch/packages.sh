@@ -20,3 +20,4 @@ sudo pacman -S cmus --noconfirm
 
 sudo pacman -S chromium obs-studio  --noconfirm
 
+
