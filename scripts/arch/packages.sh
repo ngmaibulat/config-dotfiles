@@ -16,3 +16,7 @@ sudo pacman -S feh pcmanfm --noconfirm
 
 sudo pacman -S cmus --noconfirm
 
+### GUI
+
+sudo pacman -S chromium obs-studio  --noconfirm
+
