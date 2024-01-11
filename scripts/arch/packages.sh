@@ -2,7 +2,7 @@
 
 ### Base
 
-sudo pacman --noconfirm -S open-vm-tools openssh git python zsh make fakeroot gcc go
+sudo pacman --noconfirm -S open-vm-tools openssh git python python-pip zsh make fakeroot gcc go archinstall
 
 ### CLI tools
 
