@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# load variables 
+set -a
+source input.env
+
+# set credentials
+echo root:$rootpass | chpasswd
+echo $sshkey >> ~/.ssh/authorized_keys
+
+# enable services
+systemctl enable sshd
+systemctl enable dhcpcd
+
+# install bootloader
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# setup vconsole
+echo KEYMAP=us > /etc/vconsole.conf
+echo FONT=ter-c32n >> /etc/vconsole.conf
+
+
+# locale
+
+
+# time/timezone
+
+
+# hostname, hosts
+echo $hostname > /etc/hostname
+echo 127.0.0.1 $hostname >> /etc/hosts
+
