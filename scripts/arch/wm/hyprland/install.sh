@@ -1,6 +1,8 @@
 #!/bin/bash
 
-sudo pacman -S hyprland kitty foot alacritty rofi seatd  --noconfirm
+yay -S hyprland-git --noconfirm
+
+sudo pacman -S kitty foot alacritty rofi wofi dmenu seatd  --noconfirm
 
 sudo pacman -S xdg-desktop-portal-hyprland waybar grim slurp swayidle swappy cliphist --noconfirm
 
