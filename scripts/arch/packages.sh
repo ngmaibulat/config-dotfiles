@@ -6,7 +6,7 @@ sudo pacman --noconfirm -S open-vm-tools openssh git python python-pip zsh make 
 
 ### CLI tools
 
-sudo pacman -S htop bashtop calcurse  bat glow vim neovim neofetch fastfetch tmux tldr lf mc --noconfirm
+sudo pacman -S htop bashtop ttop calcurse  bat glow vim neovim neofetch fastfetch tmux tldr lf mc --noconfirm
 
 ### X11
 

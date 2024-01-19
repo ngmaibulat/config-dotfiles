@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# set currect dir
+cd /var
+
 # load variables 
 set -a
 source input.env
@@ -22,12 +25,19 @@ echo FONT=ter-c32n >> /etc/vconsole.conf
 
 
 # locale
+echo en_US.UTF-8 UTF-8 > /etc/locale.gen
+locale-gen
+echo LANG=en_US.UTF-8 > /etc/locale.conf
 
 
 # time/timezone
+ln -s /usr/share/zoneinfo/$timezone 
+hwclock --systohc
+systemctl enable systemd-timesyncd
 
 
 # hostname, hosts
 echo $hostname > /etc/hostname
+echo 127.0.0.1 localhost >  /etc/hosts
 echo 127.0.0.1 $hostname >> /etc/hosts
 

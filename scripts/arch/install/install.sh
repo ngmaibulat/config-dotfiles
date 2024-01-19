@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+# gather information
+ls  /sys/firmware/efi
+cat /sys/firmware/efi/fw_platform_size
+timedatectl
+
+# NTP
+timedatectl set-ntp true
+
 # make sure /mnt is unmounted
 umount -l /mnt
 
@@ -36,7 +45,7 @@ mkfs.ext4 -F /dev/sda2
 mount /dev/sda2 /mnt
 
 # install base system
-pacstrap /mnt base linux linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch lsof vim
+pacstrap /mnt base linux linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch lsof vim ttf-dejavu
 
 # manage /boot partition
 mv /mnt/boot /mnt/boot2
@@ -52,7 +61,8 @@ genfstab -L /mnt > /mnt/etc/fstab
 echo blacklist pcspkr > /mnt/etc/modprobe.d/nobeep.conf
 
 # chroot into system
-cp in-chroot.sh /mnt/tmp/
-chroot /mnt /bin/bash /tmp/in-chroot.sh
+cp input.env    /mnt/var/
+cp in-chroot.sh /mnt/var/
 
+arch-chroot /mnt /var/in-chroot.sh
 

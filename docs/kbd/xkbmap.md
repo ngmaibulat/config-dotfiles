@@ -1,0 +1,5 @@
+
+
+exec "setxkbmap -layout us,de"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
+

@@ -4,7 +4,11 @@ export PS1='\[\033[1;32;40m\]\h\[\033[0;37;40m\]:\[\033[31;40m\][\[\033[1;34;40m
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias ip='ip --color=auto'
+alias feh='feh --scale-down'
+alias tb='nc termbin.com 9999'
 
-setfont ter-128n
+setfont ter-c32n
 clear
 
