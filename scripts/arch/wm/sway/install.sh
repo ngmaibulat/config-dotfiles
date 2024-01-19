@@ -1,10 +1,10 @@
 #!/bin/bash
 
 sudo pacman -S sway which alacritty wofi bemenu-wayland  --noconfirm
+sudo pacman -S xorg-server-xwayland
 
 # optional
-sudo pacman -S xorg-server-xwayland dmenu rofi kitty foot
+sudo pacman -S  dmenu rofi kitty foot
 
-mkdir -p ~/.config/sway
-cp /etc/sway/config ~/.config/sway/
+usermod -a -G seat admin
 

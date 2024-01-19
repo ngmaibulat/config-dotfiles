@@ -46,6 +46,6 @@ echo 127.0.0.1 $hostname >> /etc/hosts
 
 
 # clone repo with dotfiles
+cd /root
 git clone https://github.com/ngmaibulat/config-dotfiles.git
-
 
