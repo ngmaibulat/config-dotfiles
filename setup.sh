@@ -21,7 +21,13 @@ cp qtile/config-01.py ~/.config/qtile/config.py
 mkdir -p ~/.config/i3
 cp i3/config  ~/.config/i3/config
 
+### sway
+mkdir -p ~/.config/sway
+cp sway/config    ~/.config/sway/config
+cp sway/start.sh  ~/.config/sway/start.sh
+
 source ~/.bashrc
 
-echo source .bashrc > .profile
+echo source .bashrc > ~/.profile
+#echo source .bashrc > .bash_profile
 

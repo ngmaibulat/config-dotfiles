@@ -15,6 +15,9 @@ echo $sshkey >> ~/.ssh/authorized_keys
 systemctl enable sshd
 systemctl enable dhcpcd
 
+### sshd config
+echo UseDNS no >> /etc/ssh/sshd_config
+
 # install bootloader
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -40,4 +43,9 @@ systemctl enable systemd-timesyncd
 echo $hostname > /etc/hostname
 echo 127.0.0.1 localhost >  /etc/hosts
 echo 127.0.0.1 $hostname >> /etc/hosts
+
+
+# clone repo with dotfiles
+git clone https://github.com/ngmaibulat/config-dotfiles.git
+
 

@@ -1,6 +1,16 @@
 #!/bin/bash
 
 
+# check that input.env was updated
+
+if grep -q ChangePassword input.env; then
+    echo -e 'Update input.env'
+    exit 1
+else
+    echo -e 'File input.env appears to be updated\n\n'
+fi
+
+
 # gather information
 ls  /sys/firmware/efi
 cat /sys/firmware/efi/fw_platform_size
@@ -45,7 +55,7 @@ mkfs.ext4 -F /dev/sda2
 mount /dev/sda2 /mnt
 
 # install base system
-pacstrap /mnt base linux linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch lsof vim ttf-dejavu
+pacstrap /mnt base linux-lts linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch lsof vim ttf-dejavu
 
 # manage /boot partition
 mv /mnt/boot /mnt/boot2
