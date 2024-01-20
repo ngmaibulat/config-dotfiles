@@ -19,6 +19,8 @@ systemctl enable dhcpcd
 echo UseDNS no >> /etc/ssh/sshd_config
 
 # install bootloader
+echo GRUB_CMDLINE_LINUX_DEFAULT=\"loglevel=3 quiet video=1920x1200\" >> /etc/default/grub
+
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
