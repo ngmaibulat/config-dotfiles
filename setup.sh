@@ -9,6 +9,7 @@ cat functions/basic.sh          >> ~/.bashrc
 cat functions/get-wallpapers.sh >> ~/.bashrc
 cat functions/set-wallpaper.sh  >> ~/.bashrc
 cat functions/sudoers.sh        >> ~/.bashrc
+cat functions/start-gnome.sh    >> ~/.bashrc
 
 cp X11/xinitrc-qtile.sh ~/.xinitrc
 cp X11/Xresources-dpi-220 ~/.Xresources
