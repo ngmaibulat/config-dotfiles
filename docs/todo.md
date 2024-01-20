@@ -11,7 +11,6 @@
 
 ### Desktop
 
-- Hyprland
 - Sound
 - Bluetooth
 
