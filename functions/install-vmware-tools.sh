@@ -1,5 +1,5 @@
 
-function install-vmware-tools() {
+function i-vmware-tools() {
 
     sudo pacman -S open-vm-tools --noconfirm
     

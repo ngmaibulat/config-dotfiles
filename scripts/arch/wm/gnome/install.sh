@@ -3,9 +3,7 @@
 
 pacman -Sy --noconfirm
 
-pacman -S gnome gdm --noconfirm
+pacman -S gnome --noconfirm
 
-systemctl enable gdm
-
-systemctl start gdm
+pacman -S feh alacritty chromium firefox --noconfirm
 

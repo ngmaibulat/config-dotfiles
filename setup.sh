@@ -1,15 +1,24 @@
 #!/bin/bash
 
+# Check the operating system
+if [ "$(uname)" == "Darwin" ]; then
+    echo -e "\nThis is MacOS.\nYou might have wanted to run vim\n\n"
+    exit 1
+fi
+
+
 cp bashrc/bashrc.sh  ~/.bashrc
 cp vimrc/vimrc       ~/.vimrc
 
 cp gitconfig/gitconfig-aibulat ~/.gitconfig
 
-cat functions/basic.sh          >> ~/.bashrc
-cat functions/get-wallpapers.sh >> ~/.bashrc
-cat functions/set-wallpaper.sh  >> ~/.bashrc
-cat functions/sudoers.sh        >> ~/.bashrc
-cat functions/start-gnome.sh    >> ~/.bashrc
+cat functions/basic.sh                >> ~/.bashrc
+cat functions/get-wallpapers.sh       >> ~/.bashrc
+cat functions/set-wallpaper.sh        >> ~/.bashrc
+cat functions/set-wallpaper-gnome.sh  >> ~/.bashrc
+
+cat functions/sudoers.sh              >> ~/.bashrc
+cat functions/start-gnome.sh          >> ~/.bashrc
 cat functions/install-vmware-tools.sh >> ~/.bashrc
 
 cp X11/xinitrc-qtile.sh ~/.xinitrc
