@@ -55,7 +55,7 @@ mkfs.ext4 -F /dev/sda2
 mount /dev/sda2 /mnt
 
 # install base system
-pacstrap /mnt base linux-lts linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch lsof vim ttf-dejavu patch
+pacstrap /mnt base linux-lts linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch fastfetch lsof vim ttf-dejavu patch
 
 # manage /boot partition
 mv /mnt/boot /mnt/boot2
