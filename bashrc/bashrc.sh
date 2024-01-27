@@ -3,6 +3,8 @@ export PS1='\[\033[1;32;40m\]\h\[\033[0;37;40m\]:\[\033[31;40m\][\[\033[1;34;40m
 
 export HISTCONTROL=ignoreboth
 export HISTTIMEFORMAT="%Y-%m-%d %T "
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'

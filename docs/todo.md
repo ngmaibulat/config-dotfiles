@@ -1,6 +1,7 @@
 ### Arch Install Web UI
 
 - set params
+- set disk: /dev/sda or /dev/nvme0
 - get customized script
 - run: `curl url | bash`
 
