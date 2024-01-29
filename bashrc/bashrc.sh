@@ -6,13 +6,18 @@ export HISTTIMEFORMAT="%Y-%m-%d %T "
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-alias ls='ls --color=auto'
-alias ll='ls -l --color=auto'
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias ip='ip --color=auto'
+alias ls='lsd --color always -l --icon never --group-dirs first'
+alias ll='lsd --color always -l --icon never --group-dirs first'
+
+alias grep='grep   --color=always'
+alias egrep='egrep --color=always'
+alias fgrep='fgrep --color=always'
+
+alias ip='ip --color=always'
 alias feh='feh --scale-down'
 alias tb='nc termbin.com 9999'
+
+alias extract-mp3='yt-dlp -x --audio-format mp3'
 
 setfont ter-c32n
 clear

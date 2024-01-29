@@ -6,6 +6,7 @@ set clipboard=unnamed
 " Set the tab width to 4 spaces
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 " Enable syntax highlighting
@@ -25,9 +26,7 @@ set showmatch
 
 " Auto indent based on the previous line
 set autoindent
-
-" Set a nice status line at the bottom
-set laststatus=2
+set smartindent
 
 " Use system clipboard
 set clipboard=unnamedplus
@@ -44,11 +43,37 @@ set noerrorbells
 set visualbell
 set t_vb=
 
-" Display line and column number in the status line
-set ruler
-
 
 nnoremap <Tab> :bn<CR>
 nnoremap <S-Tab> :bp<CR>
 nnoremap <C-s> :w<CR>
+
+" Netrw File Explorer
+let g:netrw_banner = 0 " no banner
+let g:netrw_liststyle = 3 " tree view, not plain single dir
+let g:netrw_browse_split = 3 " open in a new tab upon Enter
+
+
+
+" Plugins
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'lifepillar/vim-mucomplete'
+Plug 'https://github.com/jiangmiao/auto-pairs.git'
+Plug 'davidhalter/jedi-vim'
+Plug 'https://github.com/mattn/emmet-vim.git'
+Plug 'https://github.com/dracula/vim.git'
+Plug 'https://github.com/pangloss/vim-javascript.git'
+Plug 'https://github.com/tpope/vim-markdown.git'
+
+call plug#end()
+
+
+" Other
+
+set completeopt+=menuone
+" set termguicolors
+set laststatus=2
+set ruler
 
