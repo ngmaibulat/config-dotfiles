@@ -1,8 +1,6 @@
 " Enable line numbers
 set number
 
-set clipboard=unnamed
-
 " Set the tab width to 4 spaces
 set tabstop=4
 set shiftwidth=4
@@ -29,7 +27,7 @@ set autoindent
 set smartindent
 
 " Use system clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Enable line wrapping
 set wrap
@@ -42,6 +40,12 @@ set hlsearch
 set noerrorbells
 set visualbell
 set t_vb=
+
+" Remember cursor position
+autocmd BufReadPost *
+\ if line("'\"") > 1 && line("'\"") <= line("$") |
+\   exe "normal! g'\"" |
+\ endif
 
 
 nnoremap <Tab> :bn<CR>
@@ -66,9 +70,16 @@ Plug 'https://github.com/mattn/emmet-vim.git'
 Plug 'https://github.com/dracula/vim.git'
 Plug 'https://github.com/pangloss/vim-javascript.git'
 Plug 'https://github.com/tpope/vim-markdown.git'
+Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 call plug#end()
 
+" Enable airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline_theme='molokai'  " Example theme
 
 " Other
 
@@ -76,4 +87,9 @@ set completeopt+=menuone
 " set termguicolors
 set laststatus=2
 set ruler
+
+" Left Panel for File Explorer
+
+inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
+noremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
 

@@ -7,6 +7,8 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 
 cp bashrc/bashrc.sh  ~/.bashrc
+cp bashrc/aliases.sh ~/.config/aliases.sh
+
 cp gitconfig/gitconfig-aibulat ~/.gitconfig
 
 ### vim
