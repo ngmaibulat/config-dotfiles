@@ -1,0 +1,20 @@
+#!/bin/bash
+
+dir=~/.config/bom
+
+mkdir -p $dir
+
+cat=`ls $dir | fzf`
+
+if [ -z $cat ]; then
+    echo -e "No Categories Found"
+    exit 1
+else
+    echo -e "\n"
+fi
+
+link=`cat $dir/$cat | fzf`
+
+echo -e "Link:"
+echo $link
+

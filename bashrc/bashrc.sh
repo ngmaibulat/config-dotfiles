@@ -16,6 +16,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 source ~/.config/aliases.sh
+source ~/.config/pyenv/init.sh
 
 setfont ter-c32n
 clear
