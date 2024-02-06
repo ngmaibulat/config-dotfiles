@@ -49,7 +49,7 @@ lsblk
 
 # Format partitions
 mkfs.fat  -F32 /dev/sda1
-mkfs.ext4 -F /dev/sda2
+mkfs.xfs -F /dev/sda2
 
 # mount fs
 mount /dev/sda2 /mnt
