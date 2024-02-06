@@ -10,6 +10,9 @@ else
     echo -e 'File input.env appears to be updated\n\n'
 fi
 
+# load variables 
+set -a
+source input.env
 
 # gather information
 ls  /sys/firmware/efi
@@ -38,29 +41,43 @@ echo -e 'Use cfdisk for interactive partitioning. Or: fdisk, sfdisk, parted for 
 lsblk
 
 # partition disk
-DISK="/dev/sda"
-parted -s $DISK mklabel gpt
-parted -s $DISK mkpart primary 1MiB 1GiB
-parted -s $DISK mkpart primary 1GiB 100%
+if [[ -z $disk ]]; then
+    echo -e "disk is not defined\n"
+    exit 1
+fi 
+
+parted -s $disk mklabel gpt
+parted -s $disk mkpart primary 1MiB 1GiB
+parted -s $disk mkpart primary 1GiB 100%
 
 # List out current partitions
-parted -s $DISK print
+parted -s $disk print
 lsblk
 
+# pause
+echo -e "Press any key to continue"
+read
+
 # Format partitions
-mkfs.fat  -F32 /dev/sda1
-mkfs.xfs -F /dev/sda2
+mkfs.fat -F32 $p1
+mkfs.xfs $p2
 
 # mount fs
-mount /dev/sda2 /mnt
+mount $p2 /mnt
+
+# pause
+echo -e "Press any key to continue"
+read
+
 
 # install base system
 pacstrap /mnt base linux-lts linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch fastfetch lsof vim ttf-dejavu patch sbctl bash-completion tldr lsd tmux fzf fd ripgrep lf bat glow mdcat less figlet pyenv
 
+
 # manage /boot partition
 mv /mnt/boot /mnt/boot2
 mkdir -p /mnt/boot
-mount /dev/sda1 /mnt/boot
+mount $p1 /mnt/boot
 mv /mnt/boot2/* /mnt/boot
 rm -fr /mnt/boot2
 
