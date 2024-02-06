@@ -1,21 +1,18 @@
+#!/bin/bash
 
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+cfg=$HOME/.config/bash
 
-export PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+source $cfg/vars.sh
+source $cfg/aliases.sh
 
-export PS1='\033[01;32m\u@\h\033[00m:\033[01;34m\w\033[00m\$ '
+source $cfg/functions/basic.sh               
+source $cfg/functions/get-wallpapers.sh      
+source $cfg/functions/set-wallpaper.sh       
+source $cfg/functions/set-wallpaper-gnome.sh 
+source $cfg/functions/sudoers.sh             
+source $cfg/functions/start-gnome.sh         
+source $cfg/functions/install-vmware-tools.sh
 
-export PS1='\[\033[1;32;40m\]\h\[\033[0;37;40m\]:\[\033[31;40m\][\[\033[1;34;40m\]\u\[\033[0;31;40m\]]\[\033[0;37;40m\]:\[\033[35;40m\]\w\[\033[1;33;40m\]$\[\033[0m\] '
-
-export HISTCONTROL=ignoreboth
-export HISTTIMEFORMAT="%Y-%m-%d %T "
-export HISTSIZE=1000
-export HISTFILESIZE=2000
-
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-
-source ~/.config/aliases.sh
 source ~/.config/pyenv/init.sh
 
 setfont ter-c32n

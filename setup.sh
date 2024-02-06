@@ -6,8 +6,10 @@ if [ "$(uname)" == "Darwin" ]; then
     exit 1
 fi
 
+# bash
+mkdir -p ~/.config
+cp -r bashrc ~/.config/bash
 cp bashrc/bashrc.sh  ~/.bashrc
-cp bashrc/aliases.sh ~/.config/aliases.sh
 
 cp gitconfig/gitconfig-aibulat ~/.gitconfig
 
@@ -27,19 +29,6 @@ cp pyenv/init.sh ~/.config/pyenv/init.sh
 
 ### bin
 cp -r bin ~/bin
-
-### functions
-cfg=$HOME/.config/bash
-mkdir -p $cfg
-cp -r functions $cfg
-
-echo source $cfg/functions/basic.sh                >> ~/.bashrc
-echo source $cfg/functions/get-wallpapers.sh       >> ~/.bashrc
-echo source $cfg/functions/set-wallpaper.sh        >> ~/.bashrc
-echo source $cfg/functions/set-wallpaper-gnome.sh  >> ~/.bashrc
-echo source $cfg/functions/sudoers.sh              >> ~/.bashrc
-echo source $cfg/functions/start-gnome.sh          >> ~/.bashrc
-echo source $cfg/functions/install-vmware-tools.sh >> ~/.bashrc
 
 ### X11
 cp X11/xinitrc-qtile.sh ~/.xinitrc
