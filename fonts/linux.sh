@@ -27,7 +27,7 @@ fi
 unzip -o FiraCode.zip -d "$FONT_DIR"
 
 # Refresh the font cache
-fc-cache -f
+fc-cache -fv
 
 echo "FiraCode fonts installed and font cache updated."
 
