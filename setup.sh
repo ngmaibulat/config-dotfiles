@@ -23,6 +23,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 ### nvim
 git clone https://github.com/nvim-lua/kickstart.nvim.git $HOME/.config/nvim
 
+### starship
+starship preset gruvbox-rainbow -o ~/.config/starship.toml
+
 ### pyenv
 mkdir -p ~/.config/pyenv
 cp pyenv/init.sh ~/.config/pyenv/init.sh
