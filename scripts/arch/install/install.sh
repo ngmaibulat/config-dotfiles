@@ -71,7 +71,7 @@ read
 
 
 # install base system
-pacstrap /mnt base linux-lts linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch fastfetch lsof vim ttf-dejavu patch sbctl bash-completion tldr lsd tmux fzf fd ripgrep lf bat glow mdcat less figlet pyenv lvm2 which
+pacstrap /mnt base linux-lts linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch fastfetch lsof vim ttf-dejavu patch sbctl bash-completion  tldr lsd tmux fzf fd ripgrep starship lf bat glow mdcat less figlet pyenv lvm2 which xfsprogs archiso
 
 
 # manage /boot partition
