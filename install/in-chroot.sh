@@ -14,6 +14,10 @@ echo $sshkey >> ~/.ssh/authorized_keys
 # enable services
 systemctl enable sshd
 systemctl enable dhcpcd
+systemctl enable iwd
+systemctl enable bluetoothd
+systemctl enable systemd-udev
+systemctl enable systemd-timesyncd
 
 ### sshd config
 echo UseDNS no >> /etc/ssh/sshd_config
