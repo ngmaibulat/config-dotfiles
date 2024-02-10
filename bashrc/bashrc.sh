@@ -15,8 +15,6 @@ source $cfg/functions/install-vmware-tools.sh
 
 source ~/.config/pyenv/init.sh
 
-eval "$(starship init bash)"
-
-setfont ter-c32n
+setfont ter-c24n
 clear
 

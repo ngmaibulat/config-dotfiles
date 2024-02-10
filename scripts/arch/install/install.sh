@@ -10,6 +10,9 @@ else
     echo -e 'File input.env appears to be updated\n\n'
 fi
 
+# ensure executable permissions
+chmod +x *.sh
+
 # load variables 
 set -a
 source input.env
@@ -30,7 +33,7 @@ rmmod pcspkr
 
 # load keyboard layout and font
 loadkeys us
-setfont ter-c16n
+setfont ter-c24n
 
 # install required packages
 pacman -Sy --noconfirm
@@ -60,29 +63,40 @@ read
 
 # Format partitions
 mkfs.fat -F32 $p1
-mkfs.xfs $p2
+mkfs.xfs -f $p2
 
 # mount fs
 mount $p2 /mnt
+mkdir -p  /mnt/boot
+mount $p1 /mnt/boot
 
 # pause
 echo -e "Press any key to continue"
 read
 
-
 # install base system
-pacstrap /mnt base linux-lts linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch fastfetch lsof vim ttf-dejavu patch sbctl bash-completion  tldr lsd tmux fzf fd ripgrep starship lf bat glow mdcat less figlet pyenv lvm2 which xfsprogs archiso fontconfig unzip wget
+pacstrap /mnt base linux-lts linux-firmware grub efibootmgr terminus-font dhcpcd bind-tools sudo openssh git neofetch fastfetch lsof vim neovim ttf-dejavu patch sbctl bash-completion  tldr lsd tmux fzf fd ripgrep starship lf bat glow mdcat less figlet pyenv lvm2 which xfsprogs archiso fontconfig unzip wget
 
+# amd laptop
+pacstrap /mnt amd-ucode
+
+# intel based laptop
+# pacstrap /mnt intel-ucode
+
+# laptop
+pacstrap /mnt util-linux iwd pipewire bluez bluez-utils smartmontools mc lf fzf mlocate ddgr surfraw
 
 # manage /boot partition
-mv /mnt/boot /mnt/boot2
-mkdir -p /mnt/boot
-mount $p1 /mnt/boot
-mv /mnt/boot2/* /mnt/boot
-rm -fr /mnt/boot2
+#mv /mnt/boot /mnt/boot2
+#mkdir -p /mnt/boot
+#mount $p1 /mnt/boot
+#mv /mnt/boot2/* /mnt/boot
+#rm -fr /mnt/boot2
 
 # generate fstab
 genfstab -L /mnt > /mnt/etc/fstab
+
+cp grub /mnt/etc/default/grub
 
 # disable pcspkr
 echo blacklist pcspkr > /mnt/etc/modprobe.d/nobeep.conf
