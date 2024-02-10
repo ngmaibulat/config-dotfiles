@@ -15,8 +15,8 @@ echo $sshkey >> ~/.ssh/authorized_keys
 systemctl enable sshd
 systemctl enable dhcpcd
 systemctl enable iwd
-systemctl enable bluetoothd
-systemctl enable systemd-udev
+systemctl enable bluetooth
+systemctl enable systemd-udevd
 systemctl enable systemd-timesyncd
 
 ### sshd config
@@ -37,9 +37,8 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 
 
 # time/timezone
-ln -s /usr/share/zoneinfo/$timezone 
+ln -sf /usr/share/zoneinfo/$timezone /etc/localtime 
 hwclock --systohc
-systemctl enable systemd-timesyncd
 
 
 # hostname, hosts
