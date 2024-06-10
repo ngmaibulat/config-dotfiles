@@ -33,8 +33,6 @@
 
 ### Dotfiles
 
-- vim, nvim
-- tmux
 - zsh
 
 ### Backup/Clone
