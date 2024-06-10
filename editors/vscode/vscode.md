@@ -1,0 +1,2 @@
+- https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter
+- https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format
