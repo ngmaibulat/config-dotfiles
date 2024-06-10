@@ -4,21 +4,27 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-int main() {
+int main()
+{
     pid_t pid = fork();
 
-    if (pid == -1) {
+    if (pid == -1)
+    {
         // Error handling: fork() failed
         perror("fork");
         exit(EXIT_FAILURE);
-    } else if (pid == 0) {
+    }
+    else if (pid == 0)
+    {
         // Child process
         // Replace "ls" and its arguments with the program you want to run
         execlp("ls", "ls", "-l", (char *)NULL);
         // If execlp returns, it must have failed
         perror("execlp");
         exit(EXIT_FAILURE);
-    } else {
+    }
+    else
+    {
         // Parent process
         // Wait for the child process to complete
         int status;
@@ -34,4 +40,3 @@ int main() {
 
     return 0;
 }
-

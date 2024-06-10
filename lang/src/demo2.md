@@ -1,7 +1,5 @@
-
 #### Hello
 
 ```bash
 ls -la
 ```
-
