@@ -1,85 +1,89 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
 
-    "C_Cpp.default.compilerPath": "/usr/bin/g++",
-    "C_Cpp.default.cppStandard": "c++23",
-    "C_Cpp.default.cStandard": "c23",
-    "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+  "C_Cpp.default.compilerPath": "/usr/bin/g++",
+  "C_Cpp.default.cppStandard": "c++23",
+  "C_Cpp.default.cStandard": "c23",
+  "C_Cpp.default.intelliSenseMode": "gcc-x64",
+  "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
 
-    "C_Cpp.default.includePath": [
-        "${workspaceFolder}/**",
-        "/usr/include",
-        "/usr/local/include",
-        "/opt/vcpkg/installed/x64-linux/include"
-    ],
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/**",
+    "/usr/include",
+    "/usr/local/include",
+    "/opt/vcpkg/installed/x64-linux/include"
+  ],
 
-    "editor.minimap.enabled": false,
-    "cmake.showOptionsMovedNotification": false,
+  "editor.minimap.enabled": false,
+  "cmake.showOptionsMovedNotification": false,
 
-    "explorer.confirmDragAndDrop": false,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "workbench.settings.editor": "json",
+  "explorer.confirmDragAndDrop": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "workbench.settings.editor": "json",
 
-    "python.analysis.extraPaths": [
-        "/home/admin/.pyenv/versions/3.12.2/lib/python3.12/site-packages",
-        "/home/admin/.pyenv/versions/3.13-dev/lib/python3.13/site-packages/"
-    ],
+  "python.analysis.extraPaths": [
+    "/home/admin/.pyenv/versions/3.12.2/lib/python3.12/site-packages",
+    "/home/admin/.pyenv/versions/3.13-dev/lib/python3.13/site-packages/"
+  ],
 
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true
-    },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
 
-    "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
-    },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
 
-    "[c]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
-    },
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
 
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
-    "[shellscript]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
-    "[shell]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
+  "[shell]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
 
-    "[ignore]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
-    "[properties]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
-    "[jvmoptions]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
+  "[jvmoptions]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
-    "[hosts]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
+  "[hosts]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
-    "[bats]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
+  "[bats]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
-    "github.copilot.editor.enableCodeActions": false,
-    "github.copilot.advanced": {}
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.advanced": {},
+
+  "[xml]": {
+    "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
+  }
 }
