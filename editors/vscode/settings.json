@@ -2,6 +2,10 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
 
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+
   "C_Cpp.default.compilerPath": "/usr/bin/g++",
   "C_Cpp.default.cppStandard": "c++23",
   "C_Cpp.default.cStandard": "c23",
@@ -87,5 +91,6 @@
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
   "redhat.telemetry.enabled": false,
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "files.autoSave": "afterDelay"
 }
